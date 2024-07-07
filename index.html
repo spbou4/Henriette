@@ -21,6 +21,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: #fff;
+            max-width: 600px;
         }
         .container h1 {
             font-size: 2.5em;
@@ -29,24 +30,47 @@
         }
         .container p {
             font-size: 1.2em;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: #666;
         }
-        .container .countdown {
+        .models {
+            margin-bottom: 20px;
+        }
+        .models h2 {
             font-size: 1.5em;
+            margin-bottom: 10px;
             color: #333;
         }
-        .container .email-signup {
+        .models ul {
+            list-style: none;
+            padding: 0;
+        }
+        .models li {
+            font-size: 1.2em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .models li ul {
+            list-style: none;
+            padding-left: 20px;
+            text-align: left;
+        }
+        .countdown {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .email-signup {
             margin-top: 20px;
         }
-        .container input[type="email"] {
+        .email-signup input[type="email"] {
             padding: 10px;
             font-size: 1em;
             border: 1px solid #ccc;
             border-radius: 4px;
             margin-right: 10px;
         }
-        .container input[type="submit"] {
+        .email-signup input[type="submit"] {
             padding: 10px 20px;
             font-size: 1em;
             border: none;
@@ -55,17 +79,98 @@
             color: white;
             cursor: pointer;
         }
-        .container input[type="submit"]:hover {
+        .email-signup input[type="submit"]:hover {
             background-color: #0056b3;
         }
     </style>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 15);
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Henriette Foundation</h1>
         <p>Our new library of large language models is coming soon.</p>
+        <div class="models">
+            <h2>Model Variants:</h2>
+            <ul>
+                <li><strong>Henriette-TINY:</strong> The smallest model, optimized for speed and efficiency.
+                    <br><strong>Details:</strong>
+                    <ul>
+                        <li>Embedding Dimension: 256</li>
+                        <li>Context Window: 128 tokens</li>
+                        <li>Number of Layers: 4</li>
+                        <li>Number of Attention Heads: 4</li>
+                    </ul>
+                </li>
+                <li><strong>Henriette-SMALL:</strong> A small-sized model with increased capacity.
+                    <br><strong>Details:</strong>
+                    <ul>
+                        <li>Embedding Dimension: 512</li>
+                        <li>Context Window: 256 tokens</li>
+                        <li>Number of Layers: 6</li>
+                        <li>Number of Attention Heads: 8</li>
+                    </ul>
+                </li>
+                <li><strong>Henriette-MEDIUM:</strong> A balanced model with a default configuration.
+                    <br><strong>Details:</strong>
+                    <ul>
+                        <li>Embedding Dimension: 1024</li>
+                        <li>Context Window: 512 tokens</li>
+                        <li>Number of Layers: 12</li>
+                        <li>Number of Attention Heads: 16</li>
+                    </ul>
+                </li>
+                <li><strong>Henriette-LARGE:</strong> A large model for more complex tasks.
+                    <br><strong>Details:</strong>
+                    <ul>
+                        <li>Embedding Dimension: 2048</li>
+                        <li>Context Window: 1024 tokens</li>
+                        <li>Number of Layers: 24</li>
+                        <li>Number of Attention Heads: 32</li>
+                    </ul>
+                </li>
+                <li><strong>Henriette-GIGA:</strong> The most powerful model, designed for extensive tasks.
+                    <br><strong>Details:</strong>
+                    <ul>
+                        <li>Embedding Dimension: 4096</li>
+                        <li>Context Window: 2048 tokens</li>
+                        <li>Number of Layers: 48</li>
+                        <li>Number of Attention Heads: 64</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <div class="countdown">
-            <p>Stay tuned for more updates!</p>
+            <p id="countdown"></p>
         </div>
         <div class="email-signup">
             <p>Sign up to be notified:</p>
