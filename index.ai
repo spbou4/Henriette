@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henriette Foundation - New Library Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .container h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .container p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        .container .countdown {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .container .email-signup {
+            margin-top: 20px;
+        }
+        .container input[type="email"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .container input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Henriette Foundation</h1>
+        <p>Our new library of large language models is coming soon.</p>
+        <div class="countdown">
+            <p>Stay tuned for more updates!</p>
+        </div>
+        <div class="email-signup">
+            <p>Sign up to be notified:</p>
+            <form action="https://example.com/subscribe" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="submit" value="Notify Me">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
