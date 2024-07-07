@@ -41,19 +41,19 @@
             margin-bottom: 10px;
             color: #333;
         }
-        .models ul {
-            list-style: none;
-            padding: 0;
+        .models table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
-        .models li {
-            font-size: 1.2em;
-            color: #666;
-            margin: 10px 0;
-        }
-        .models li ul {
-            list-style: none;
-            padding-left: 20px;
+        .models th, .models td {
+            border: 1px solid #ddd;
+            padding: 8px;
             text-align: left;
+        }
+        .models th {
+            background-color: #f2f2f2;
+            color: #333;
         }
         .countdown {
             font-size: 1.5em;
@@ -121,53 +121,50 @@
         <p>Our new library of large language models is coming soon.</p>
         <div class="models">
             <h2>Model Variants:</h2>
-            <ul>
-                <li><strong>Henriette-TINY:</strong> The smallest model, optimized for speed and efficiency.
-                    <br><strong>Details:</strong>
-                    <ul>
-                        <li>Embedding Dimension: 256</li>
-                        <li>Context Window: 128 tokens</li>
-                        <li>Number of Layers: 4</li>
-                        <li>Number of Attention Heads: 4</li>
-                    </ul>
-                </li>
-                <li><strong>Henriette-SMALL:</strong> A small-sized model with increased capacity.
-                    <br><strong>Details:</strong>
-                    <ul>
-                        <li>Embedding Dimension: 512</li>
-                        <li>Context Window: 256 tokens</li>
-                        <li>Number of Layers: 6</li>
-                        <li>Number of Attention Heads: 8</li>
-                    </ul>
-                </li>
-                <li><strong>Henriette-MEDIUM:</strong> A balanced model with a default configuration.
-                    <br><strong>Details:</strong>
-                    <ul>
-                        <li>Embedding Dimension: 1024</li>
-                        <li>Context Window: 512 tokens</li>
-                        <li>Number of Layers: 12</li>
-                        <li>Number of Attention Heads: 16</li>
-                    </ul>
-                </li>
-                <li><strong>Henriette-LARGE:</strong> A large model for more complex tasks.
-                    <br><strong>Details:</strong>
-                    <ul>
-                        <li>Embedding Dimension: 2048</li>
-                        <li>Context Window: 1024 tokens</li>
-                        <li>Number of Layers: 24</li>
-                        <li>Number of Attention Heads: 32</li>
-                    </ul>
-                </li>
-                <li><strong>Henriette-GIGA:</strong> The most powerful model, designed for extensive tasks.
-                    <br><strong>Details:</strong>
-                    <ul>
-                        <li>Embedding Dimension: 4096</li>
-                        <li>Context Window: 2048 tokens</li>
-                        <li>Number of Layers: 48</li>
-                        <li>Number of Attention Heads: 64</li>
-                    </ul>
-                </li>
-            </ul>
+            <table>
+                <tr>
+                    <th>Model</th>
+                    <th>Embedding Dimension</th>
+                    <th>Context Window</th>
+                    <th>Number of Layers</th>
+                    <th>Number of Attention Heads</th>
+                </tr>
+                <tr>
+                    <td><strong>Henriette-TINY</strong></td>
+                    <td>256</td>
+                    <td>128 tokens</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td><strong>Henriette-SMALL</strong></td>
+                    <td>512</td>
+                    <td>256 tokens</td>
+                    <td>6</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td><strong>Henriette-MEDIUM</strong></td>
+                    <td>1024</td>
+                    <td>512 tokens</td>
+                    <td>12</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td><strong>Henriette-LARGE</strong></td>
+                    <td>2048</td>
+                    <td>1024 tokens</td>
+                    <td>24</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td><strong>Henriette-GIGA</strong></td>
+                    <td>4096</td>
+                    <td>2048 tokens</td>
+                    <td>48</td>
+                    <td>64</td>
+                </tr>
+            </table>
         </div>
         <div class="countdown">
             <p id="countdown"></p>
